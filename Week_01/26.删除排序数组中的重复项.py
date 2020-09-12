@@ -1,7 +1,7 @@
 
 # @before-stub-for-debug-begin
-from python3problem26 import *
-from typing import *
+# from python3problem26 import *
+# from typing import *
 # @before-stub-for-debug-end
 
 #
