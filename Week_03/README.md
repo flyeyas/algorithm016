@@ -46,17 +46,69 @@ public void recur(int level, int param) {
 ```
 
 
+### 分治
+递归的一种细致的划分
+
+#### 特性
+1. 把一个大问题拆解成若干子问题处理，最后合并所有子问题的结果
 
 
-### 题解思路
 
-#### 关于递归要点
-抛弃人肉递归，寻找重复性，拆解为重复子问题
+#### 代码模板
 
-#### 括号生成
-思路：
-1. 输出所有可能性组合
-2. 寻找重复性,对称性:
-    1. 左侧括号必须要有一个对称的右侧括号，
-    2. 左侧括号数量==右侧括号数量，即生成的字符串是一个2n的长度
-    3. 每次递归，需要左括号数量 < n, 有括号数量 < 左括号数量
+```
+// java
+private static int divide_conquer(Problem problem, ) {
+  
+  // 终止递归
+  if (problem == NULL) {
+    int res = process_last_result();
+    return res;     
+  }
+  //拆解成为子问题
+  subProblems = split_problem(problem)
+  
+  //向下递归
+  res0 = divide_conquer(subProblems[0])
+  res1 = divide_conquer(subProblems[1])
+  
+  //合并子问题结果
+  result = process_result(res0, res1);
+  
+  //清理变量，如果有需要
+ 
+}
+```
+
+```
+# python
+def divide_conquer(problem, param1, param2, ...): 
+  # 终止递归 
+  if problem is None: 
+	print_result 
+	return 
+
+  # 拆解成为子问题
+  data = prepare_data(problem) 
+  subproblems = split_problem(problem, data) 
+
+  # 向下递归子问题 
+  subresult1 = self.divide_conquer(subproblems[0], p1, ...) 
+  subresult2 = self.divide_conquer(subproblems[1], p1, ...) 
+  subresult3 = self.divide_conquer(subproblems[2], p1, ...) 
+  …
+
+  # 合并结果
+  result = process_result(subresult1, subresult2, subresult3, …)
+	
+  # 清理变量，如果有需要
+```
+
+### 回溯
+递归的一种
+
+#### 特性
+试错机制，一层一层试探，没有正确答案就返回上一层或者上几层，重新试探
+
+### 记录
+针对回溯相关的算法题需要多多练习
