@@ -37,11 +37,11 @@ from typing import *
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        numsMap = {}
+        numsMap = dict()
         for index, num in enumerate(nums):
-            numKey = target-num
-            if numsMap.get(numKey,None) is not None:
-                return [index, numsMap[numKey]]
+            numKey = target - num
+            if numsMap.get(numKey, None) is not None:
+                return [numsMap[numKey], index]
             numsMap[num] = index
 
 # @lc code=end
